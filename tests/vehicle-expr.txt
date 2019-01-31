@@ -1,0 +1,10 @@
+payload.vehicle.{
+    "id": `@id`,
+    "label": label,
+    "vin": vin.value,
+    "serial": deviceSerialNumber.value,
+    "make": make,
+    "model": model,
+    "year": year,
+    "license": licensePlate.`@state` & ' ' & licensePlate.value
+  }

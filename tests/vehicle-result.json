@@ -1,0 +1,32 @@
+[
+    {
+      "id": 942297,
+      "label": "E M660",
+      "vin": "1GNSK3EC1FRXXXXXX",
+      "serial": "50X00XXX8X",
+      "make": "CHEVROLET",
+      "model": "TAHOE",
+      "year": 2015,
+      "license": "NY AXXXXX"
+    },
+    {
+      "id": 763803,
+      "label": "LW04",
+      "vin": "1FTFX1EF9EFXXXXXX",
+      "serial": "5X147XX5XX",
+      "make": "FORD",
+      "model": "F-150",
+      "year": 2014,
+      "license": "NY XB3XXX"
+    },
+    {
+      "id": 763800,
+      "label": "LWB1",
+      "vin": "XXT0X20FPXXX0XXX9",
+      "serial": "50XX6X7X4X",
+      "make": "CAT",
+      "model": "BACKHOE",
+      "year": 2000,
+      "license": "NY XJ8XXX"
+    }
+]
