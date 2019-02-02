@@ -12,7 +12,7 @@ This project describes how to execute JSONata transformation expressions in Gola
 
 We provide scripts to transpile JSONata code to ES5, and then convert the resulting files into Golang source code.
 
-We then implement a Golang utility that Go applications can use to trans form any JSON data using JSONata expressions.  This utility creates an otto JavaScript interpreter, and preloads JSONata lib scripts when the utility is loaded.  Thus, any complex data transformation request can be handled by a simple function call with an input JSON data and an JSONata expression.
+We then implement a Golang utility that you can use to transform any JSON data using JSONata expressions.  This utility creates an otto JavaScript interpreter, and preloads JSONata lib scripts when the it is loaded.  Thus, any complex data transformation request can be handled by a simple function call with input JSON data and an JSONata expression.
 
 ## Installation
 Install [Go version 1.11.x](https://golang.org/doc/install) and [set GOPATH environment variable](https://golang.org/doc/code.html#GOPATH).  Clone this project, then setup and test it as follows:
@@ -25,17 +25,17 @@ make
 
 ## Examples
 
-Following Golang example shows a JSONata expression `vehicle-expr.txt` on the input data `vehicle.json`.
+Following Golang example shows a JSONata expression [vehicle-expr.txt](https://github.com/yxuco/gojsonata/tree/master/tests/vehicle-expr.txt) on the input data [vehicle.json](https://github.com/yxuco/gojsonata/tree/master/tests/vehicle.json).
 ```
-	data, err := ioutil.ReadFile("./tests/vehicle.json")
-	expr, err := ioutil.ReadFile("./tests/vehicle-expr.txt")
-	result, err := Transform(string(data), string(expr))
+	data, _ := ioutil.ReadFile("./tests/vehicle.json")
+	expr, _ := ioutil.ReadFile("./tests/vehicle-expr.txt")
+	result, _ := Transform(string(data), string(expr))
 	fmt.Printf("result value: %s\n", result)
 ```
 
 A simpler transformation can also be done as follows:
 ```
-	value, err := RunScript(
+	value, _ := RunScript(
 		`var data = {
 		  example: [
 		    {value: 4},
@@ -46,12 +46,12 @@ A simpler transformation can also be done as follows:
 	  
 	    var expression = jsonata('$sum(example.value)');
 	    expression.evaluate(data);`)
-	result, err := value.ToInteger()  // result = 24
+	result, _ := value.ToInteger()  // result = 24
 ```
 
-The file `jsengine_test.go` shows more Golang examples.
+The file [jsengine_test.go](https://github.com/yxuco/gojsonata/blob/master/jsengine_test.go) shows more Golang examples.
 
-You may also use [motto](https://github.com/ddliu/motto) command-line tool to test JSONata transformations, which is demonstrated by the following commands in the `Makefile`.
+You may also use [motto](https://github.com/ddliu/motto) command-line tool to test JSONata transformations, which is demonstrated by the following commands in the [Makefile](https://github.com/yxuco/gojsonata/blob/master/Makefile).
 ```
     make motto
 ```
