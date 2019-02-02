@@ -15,7 +15,21 @@ We provide scripts to transpile JSONata library to ES5, and then convert the res
 We then implement a Golang utility that you can use to transform any JSON data using JSONata expression.  This utility creates an otto JavaScript interpreter, and preloads JSONata libraries when the utility is loaded.  Thus, any complex data transformation request can be handled by a simple function call with input JSON data and an JSONata expression.
 
 ## Installation
-Install [Go version 1.11.x](https://golang.org/doc/install) and [set GOPATH environment variable](https://golang.org/doc/code.html#GOPATH).  Clone this project, then setup and test it as follows:
+Install [Go version 1.11.x](https://golang.org/doc/install) and [set GOPATH environment variable](https://golang.org/doc/code.html#GOPATH).
+
+Install [GNU make](https://www.gnu.org/software/make/). For ubuntu, e.g., use the following commands
+```
+sudo apt update
+sudo apt install make
+sudo apt install make-guile
+```
+
+Install [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/).  For ubuntu, e.g., use the following command
+```
+sudo apt install nodejs npm
+```
+
+Clone this project, then setup and test it as follows:
 ```
 export PATH=${GOPATH}/bin:${PATH}
 go get -u -d github.com/yxuco/gojsonata

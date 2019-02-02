@@ -7,13 +7,17 @@ MOTTO_REPO    := github.com/ddliu/motto
 .PHONY: all
 all: generate test
 
+.PHONY: depend
+depend:
+	go get -u github.com/stretchr/testify
+
 .PHONY: generate
 generate:
 	@cd $(SCRIPTS_PATH) && \
 	    ./prepare-source.sh
 
 .PHONY: test
-test:
+test: depend
 	go test -v
 
 .PHONY: motto
