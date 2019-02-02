@@ -2,7 +2,7 @@
 Execute JSONata query and transformation expressions in Golang.
 
 ## Problem Statement
-We want a generic solution for transfomation of structured data in Golang.  [XSLT](https://www.w3.org/TR/xslt-30/) is the most advanced solution for transforming XML data, but it is not well supported by Golang.  [JSONata](http://jsonata.org/) is an elegant solution for transforming JSON data, but it supports only JavaScropts.
+We want a generic solution for transfomation of structured data in Golang.  [XSLT](https://www.w3.org/TR/xslt-30/) is the most advanced solution for transforming XML data, but it is not well supported by Golang.  [JSONata](http://jsonata.org/) is an elegant solution for transforming JSON data, but it supports only JavaScripts.
 
 This project describes how to execute JSONata transformation expressions in Golang.  Following are the tools used to make it work.
 * [otto](https://github.com/robertkrimen/otto) - A JavaScript interpreter in Go.  It supports only ES5 syntax.
@@ -10,9 +10,9 @@ This project describes how to execute JSONata transformation expressions in Gola
 * [traceur](https://github.com/google/traceur-compiler) - JavaScript transpiler for generating ES5 code from ES6+ code.
 * [go-bindata](https://github.com/jteeuwen/go-bindata) - Go utility for converting any file into Golang source code.
 
-We provide scripts to transpile JSONata code to ES5, and then convert the resulting files into Golang source code.
+We provide scripts to transpile JSONata library to ES5, and then convert the resulting files into Golang source code.
 
-We then implement a Golang utility that you can use to transform any JSON data using JSONata expressions.  This utility creates an otto JavaScript interpreter, and preloads JSONata lib scripts when the it is loaded.  Thus, any complex data transformation request can be handled by a simple function call with input JSON data and an JSONata expression.
+We then implement a Golang utility that you can use to transform any JSON data using JSONata expression.  This utility creates an otto JavaScript interpreter, and preloads JSONata libraries when the utility is loaded.  Thus, any complex data transformation request can be handled by a simple function call with input JSON data and an JSONata expression.
 
 ## Installation
 Install [Go version 1.11.x](https://golang.org/doc/install) and [set GOPATH environment variable](https://golang.org/doc/code.html#GOPATH).  Clone this project, then setup and test it as follows:
@@ -25,7 +25,7 @@ make
 
 ## Examples
 
-Following Golang example shows a JSONata expression [vehicle-expr.txt](https://github.com/yxuco/gojsonata/tree/master/tests/vehicle-expr.txt) on the input data [vehicle.json](https://github.com/yxuco/gojsonata/tree/master/tests/vehicle.json).
+Following Golang example shows the execution of a JSONata expression [vehicle-expr.txt](https://github.com/yxuco/gojsonata/tree/master/tests/vehicle-expr.txt) on the input data [vehicle.json](https://github.com/yxuco/gojsonata/tree/master/tests/vehicle.json), which created an output [result](https://github.com/yxuco/gojsonata/tree/master/tests/result-pretty.json) of different schema.
 ```
 	data, _ := ioutil.ReadFile("./tests/vehicle.json")
 	expr, _ := ioutil.ReadFile("./tests/vehicle-expr.txt")
