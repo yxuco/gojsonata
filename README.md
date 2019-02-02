@@ -51,7 +51,7 @@ A simpler transformation can also be done as follows:
 
 The file [jsengine_test.go](https://github.com/yxuco/gojsonata/blob/master/jsengine_test.go) shows more Golang examples.
 
-You may also use [motto](https://github.com/ddliu/motto) command-line tool to test JSONata transformations, which is demonstrated by the following commands in the [Makefile](https://github.com/yxuco/gojsonata/blob/master/Makefile).
+You may also use the [motto](https://github.com/ddliu/motto) command-line tool to test JSONata transformations, which is demonstrated by the following commands in the [Makefile](https://github.com/yxuco/gojsonata/blob/master/Makefile).
 ```
     make motto
 ```

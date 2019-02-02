@@ -4,6 +4,7 @@
  * in the license file that is distributed with this file.
  */
 
+// Package gojsonata provides utility functions to execute JSONata expression for JSON data transformations
 package gojsonata
 
 import (
