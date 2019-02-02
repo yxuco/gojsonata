@@ -154,4 +154,5 @@ var data = '{ \
 
 var expression = jsonata(expr);
 var result = expression.evaluate(JSON.parse(data));
-console.log('vehicle result: '+JSON.stringify(result));
+result = JSON.stringify(result)
+console.log('vehicle result: '+result);
