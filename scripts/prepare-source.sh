@@ -27,7 +27,8 @@ function buildTraceur {
     npm install
     make
     make bin/traceur-runtime.js
-    cp traceur ${GOPATH}/bin
+    mkdir -p ${GOPATH}/bin
+    cp traceur ${GOPATH}/bin/traceur
     cp bin/traceur-runtime.js ${JS_PATH}
 }
 
